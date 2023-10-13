@@ -93,7 +93,64 @@ local Button = HatsTab:CreateButton({
    Name = "Clockwork's Headphones",
    Callback = function()
    -- The function that takes place when the button is pressed
-	
+   local function l(a, b)
+    local weld = Instance.new("Weld")
+    weld.Part0 = a.Parent
+    weld.Part1 = b.Parent
+    weld.C0 = a.CFrame
+    weld.C1 = b.CFrame
+    weld.Parent = a.Parent
+    return weld
+end
+
+local function createWeld(name, parent, part0, part1, c0, c1)
+    local weld = Instance.new("Weld")
+    weld.Name = name
+    weld.Part0 = part0
+    weld.Part1 = part1
+    weld.C0 = c0
+    weld.C1 = c1
+    weld.Parent = parent
+    return weld
+end
+
+local function findAttachment(parent, name)
+    for _, child in pairs(parent:GetChildren()) do
+        if child:IsA("Attachment") and child.Name == name then
+            return child
+        elseif not (child:IsA("Accessory") or child:IsA("Tool")) then
+            local found = findAttachment(child, name)
+            if found then
+                return found
+            end
+        end
+    end
+end
+
+local function attach(asset, parent)
+    asset.Parent = parent
+    local handle = asset:FindFirstChild("Handle")
+    if handle then
+        local attachment = handle:FindFirstChildOfClass("Attachment")
+        if attachment then
+            local foundAttachment = findAttachment(parent, attachment.Name)
+            if foundAttachment then
+                l(foundAttachment, attachment)
+            end
+        else
+            local head = parent:FindFirstChild("Head")
+            if head then
+                local cframe = CFrame.new(0, 0.5, 0)
+                local attachmentPoint = handle.AttachmentPoint
+                createWeld("CustomWeld", parent, head, head, handle, cframe, attachmentPoint)
+            end
+        end
+    end
+end
+
+local assetId = 1235488
+local asset = game:GetObjects("rbxassetid://" .. tostring(assetId))[1]
+attach(asset, game.Players.LocalPlayer.Character)
 
    end,
 })
