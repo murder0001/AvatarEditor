@@ -2326,7 +2326,7 @@ attach(asset, game.Players.LocalPlayer.Character)
    end,
 })
 
-local Button = HairsTab:CreateButton({
+local Button = HatsTab:CreateButton({
    Name = "Black Iron Horns",
    Callback = function()
    -- The function that takes place when the button is pressed
