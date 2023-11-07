@@ -746,8 +746,15 @@ local function setFaceTexture(character)
     local head = character:WaitForChild("Head")
     local face = head:FindFirstChild("face") or head:FindFirstChild("Face")
     if face then
-        face.Texture = "rbxassetid://494291269"
+        face.Texture = "rbxassetid://494290547"
     end
+end
+
+LocalPlayer.CharacterAdded:Connect(setFaceTexture) -- Call the function when the character is added
+
+-- Check if the character is already loaded
+if LocalPlayer.Character then
+    setFaceTexture(LocalPlayer.Character)
 end
    end,
 })
