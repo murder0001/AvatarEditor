@@ -3063,3 +3063,5 @@ end
 -- Connect the key press event
 game:GetService("UserInputService").InputBegan:Connect(onKeyPress)
 
+   end,
+})
