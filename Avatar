@@ -26,5 +26,8 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
-local HatsTab = Window:CreateTab("Hats", nil) -- Title, Image
-local Section = HomeTab:CreateSection("Hats")
+local HomeTab = Window:CreateTab("Home", nil) -- Title, Image
+local Section = HomeTab:CreateSection("Home")
+
+local HatTab = Window:CreateTab("Hat", nil) -- Title, Image
+local Section = HomeTab:CreateSection("Hat")
