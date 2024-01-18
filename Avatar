@@ -189,7 +189,7 @@ end
    end,
 })
 
-local Button = Tab:CreateButton({
+local Button = HomeTab:CreateButton({
    Name = "Dominus Vespertilio",
    Callback = function()
    -- The function that takes place when the button is pressed
@@ -269,7 +269,7 @@ end
    end,
 })
 
-local Button = Tab:CreateButton({
+local Button = HomeTab:CreateButton({
    Name = "Clockwork's Headphones",
    Callback = function()
    -- The function that takes place when the button is pressed
