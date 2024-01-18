@@ -188,4 +188,565 @@ end
 
    end,
 })
+
+local Button = Tab:CreateButton({
+   Name = "Dominus Vespertilio",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   local function l(a, b)
+    local weld = Instance.new("Weld")
+    weld.Part0 = a.Parent
+    weld.Part1 = b.Parent
+    weld.C0 = a.CFrame
+    weld.C1 = b.CFrame
+    weld.Parent = a.Parent
+    return weld
+end
+
+local function createWeld(name, parent, part0, part1, c0, c1)
+    local weld = Instance.new("Weld")
+    weld.Name = name
+    weld.Part0 = part0
+    weld.Part1 = part1
+    weld.C0 = c0
+    weld.C1 = c1
+    weld.Parent = parent
+    return weld
+end
+
+local function findAttachment(parent, name)
+    for _, child in pairs(parent:GetChildren()) do
+        if child:IsA("Attachment") and child.Name == name then
+            return child
+        elseif not (child:IsA("Accessory") or child:IsA("Tool")) then
+            local found = findAttachment(child, name)
+            if found then
+                return found
+            end
+        end
+    end
+end
+
+local function attach(assetId, parent)
+    local asset = game:GetObjects("rbxassetid://" .. tostring(assetId))[1]
+    asset.Parent = parent
+
+    local handle = asset:FindFirstChild("Handle")
+    if handle then
+        local attachment = handle:FindFirstChildOfClass("Attachment")
+        if attachment then
+            local foundAttachment = findAttachment(parent, attachment.Name)
+            if foundAttachment then
+                l(foundAttachment, attachment)
+            end
+        else
+            local head = parent:FindFirstChild("Head")
+            if head then
+                local cframe = CFrame.new(0, 0.5, 0)
+                local attachmentPoint = handle.AttachmentPoint
+                createWeld("CustomWeld", parent, head, head, handle, cframe, attachmentPoint)
+            end
+        end
+    end
+end
+
+local function onCharacterAdded(character)
+    wait(0.1)
+
+    local assetIds = {96103379}
+
+    for _, assetId in ipairs(assetIds) do
+        attach(assetId, character)
+    end
+end
+
+game.Players.LocalPlayer.CharacterAdded:Connect(onCharacterAdded)
+
+if game.Players.LocalPlayer.Character then
+    onCharacterAdded(game.Players.LocalPlayer.Character)
+end
+
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Clockwork's Headphones",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   local function l(a, b)
+    local weld = Instance.new("Weld")
+    weld.Part0 = a.Parent
+    weld.Part1 = b.Parent
+    weld.C0 = a.CFrame
+    weld.C1 = b.CFrame
+    weld.Parent = a.Parent
+    return weld
+end
+
+local function createWeld(name, parent, part0, part1, c0, c1)
+    local weld = Instance.new("Weld")
+    weld.Name = name
+    weld.Part0 = part0
+    weld.Part1 = part1
+    weld.C0 = c0
+    weld.C1 = c1
+    weld.Parent = parent
+    return weld
+end
+
+local function findAttachment(parent, name)
+    for _, child in pairs(parent:GetChildren()) do
+        if child:IsA("Attachment") and child.Name == name then
+            return child
+        elseif not (child:IsA("Accessory") or child:IsA("Tool")) then
+            local found = findAttachment(child, name)
+            if found then
+                return found
+            end
+        end
+    end
+end
+
+local function attach(assetId, parent)
+    local asset = game:GetObjects("rbxassetid://" .. tostring(assetId))[1]
+    asset.Parent = parent
+
+    local handle = asset:FindFirstChild("Handle")
+    if handle then
+        local attachment = handle:FindFirstChildOfClass("Attachment")
+        if attachment then
+            local foundAttachment = findAttachment(parent, attachment.Name)
+            if foundAttachment then
+                l(foundAttachment, attachment)
+            end
+        else
+            local head = parent:FindFirstChild("Head")
+            if head then
+                local cframe = CFrame.new(0, 0.5, 0)
+                local attachmentPoint = handle.AttachmentPoint
+                createWeld("CustomWeld", parent, head, head, handle, cframe, attachmentPoint)
+            end
+        end
+    end
+end
+
+local function onCharacterAdded(character)
+    wait(0.1)
+
+    local assetIds = {1235488}
+
+    for _, assetId in ipairs(assetIds) do
+        attach(assetId, character)
+    end
+end
+
+game.Players.LocalPlayer.CharacterAdded:Connect(onCharacterAdded)
+
+if game.Players.LocalPlayer.Character then
+    onCharacterAdded(game.Players.LocalPlayer.Character)
+end
+
+   end,
+})
+
+local Button = HomeTab:CreateButton({
+   Name = "Subarctic Commando",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   local function l(a, b)
+    local weld = Instance.new("Weld")
+    weld.Part0 = a.Parent
+    weld.Part1 = b.Parent
+    weld.C0 = a.CFrame
+    weld.C1 = b.CFrame
+    weld.Parent = a.Parent
+    return weld
+end
+
+local function createWeld(name, parent, part0, part1, c0, c1)
+    local weld = Instance.new("Weld")
+    weld.Name = name
+    weld.Part0 = part0
+    weld.Part1 = part1
+    weld.C0 = c0
+    weld.C1 = c1
+    weld.Parent = parent
+    return weld
+end
+
+local function findAttachment(parent, name)
+    for _, child in pairs(parent:GetChildren()) do
+        if child:IsA("Attachment") and child.Name == name then
+            return child
+        elseif not (child:IsA("Accessory") or child:IsA("Tool")) then
+            local found = findAttachment(child, name)
+            if found then
+                return found
+            end
+        end
+    end
+end
+
+local function attach(assetId, parent)
+    local asset = game:GetObjects("rbxassetid://" .. tostring(assetId))[1]
+    asset.Parent = parent
+
+    local handle = asset:FindFirstChild("Handle")
+    if handle then
+        local attachment = handle:FindFirstChildOfClass("Attachment")
+        if attachment then
+            local foundAttachment = findAttachment(parent, attachment.Name)
+            if foundAttachment then
+                l(foundAttachment, attachment)
+            end
+        else
+            local head = parent:FindFirstChild("Head")
+            if head then
+                local cframe = CFrame.new(0, 0.5, 0)
+                local attachmentPoint = handle.AttachmentPoint
+                createWeld("CustomWeld", parent, head, head, handle, cframe, attachmentPoint)
+            end
+        end
+    end
+end
+
+local function onCharacterAdded(character)
+    wait(0.1)
+
+    local assetIds = {39247441}
+
+    for _, assetId in ipairs(assetIds) do
+        attach(assetId, character)
+    end
+end
+
+game.Players.LocalPlayer.CharacterAdded:Connect(onCharacterAdded)
+
+if game.Players.LocalPlayer.Character then
+    onCharacterAdded(game.Players.LocalPlayer.Character)
+end
+
+   end,
+})
+
+local Button = HomeTab:CreateButton({
+   Name = "Poisoned Horns of the Toxic",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   local function l(a, b)
+    local weld = Instance.new("Weld")
+    weld.Part0 = a.Parent
+    weld.Part1 = b.Parent
+    weld.C0 = a.CFrame
+    weld.C1 = b.CFrame
+    weld.Parent = a.Parent
+    return weld
+end
+
+local function createWeld(name, parent, part0, part1, c0, c1)
+    local weld = Instance.new("Weld")
+    weld.Name = name
+    weld.Part0 = part0
+    weld.Part1 = part1
+    weld.C0 = c0
+    weld.C1 = c1
+    weld.Parent = parent
+    return weld
+end
+
+local function findAttachment(parent, name)
+    for _, child in pairs(parent:GetChildren()) do
+        if child:IsA("Attachment") and child.Name == name then
+            return child
+        elseif not (child:IsA("Accessory") or child:IsA("Tool")) then
+            local found = findAttachment(child, name)
+            if found then
+                return found
+            end
+        end
+    end
+end
+
+local function attach(assetId, parent)
+    local asset = game:GetObjects("rbxassetid://" .. tostring(assetId))[1]
+    asset.Parent = parent
+
+    local handle = asset:FindFirstChild("Handle")
+    if handle then
+        local attachment = handle:FindFirstChildOfClass("Attachment")
+        if attachment then
+            local foundAttachment = findAttachment(parent, attachment.Name)
+            if foundAttachment then
+                l(foundAttachment, attachment)
+            end
+        else
+            local head = parent:FindFirstChild("Head")
+            if head then
+                local cframe = CFrame.new(0, 0.5, 0)
+                local attachmentPoint = handle.AttachmentPoint
+                createWeld("CustomWeld", parent, head, head, handle, cframe, attachmentPoint)
+            end
+        end
+    end
+end
+
+local function onCharacterAdded(character)
+    wait(0.1)
+
+    local assetIds = {1744060292}
+
+    for _, assetId in ipairs(assetIds) do
+        attach(assetId, character)
+    end
+end
+
+game.Players.LocalPlayer.CharacterAdded:Connect(onCharacterAdded)
+
+if game.Players.LocalPlayer.Character then
+    onCharacterAdded(game.Players.LocalPlayer.Character)
+end
+
+   end,
+})
+
+local Button = HomeTab:CreateButton({
+   Name = "Valkyrie Helm",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   local function l(a, b)
+    local weld = Instance.new("Weld")
+    weld.Part0 = a.Parent
+    weld.Part1 = b.Parent
+    weld.C0 = a.CFrame
+    weld.C1 = b.CFrame
+    weld.Parent = a.Parent
+    return weld
+end
+
+local function createWeld(name, parent, part0, part1, c0, c1)
+    local weld = Instance.new("Weld")
+    weld.Name = name
+    weld.Part0 = part0
+    weld.Part1 = part1
+    weld.C0 = c0
+    weld.C1 = c1
+    weld.Parent = parent
+    return weld
+end
+
+local function findAttachment(parent, name)
+    for _, child in pairs(parent:GetChildren()) do
+        if child:IsA("Attachment") and child.Name == name then
+            return child
+        elseif not (child:IsA("Accessory") or child:IsA("Tool")) then
+            local found = findAttachment(child, name)
+            if found then
+                return found
+            end
+        end
+    end
+end
+
+local function attach(assetId, parent)
+    local asset = game:GetObjects("rbxassetid://" .. tostring(assetId))[1]
+    asset.Parent = parent
+
+    local handle = asset:FindFirstChild("Handle")
+    if handle then
+        local attachment = handle:FindFirstChildOfClass("Attachment")
+        if attachment then
+            local foundAttachment = findAttachment(parent, attachment.Name)
+            if foundAttachment then
+                l(foundAttachment, attachment)
+            end
+        else
+            local head = parent:FindFirstChild("Head")
+            if head then
+                local cframe = CFrame.new(0, 0.5, 0)
+                local attachmentPoint = handle.AttachmentPoint
+                createWeld("CustomWeld", parent, head, head, handle, cframe, attachmentPoint)
+            end
+        end
+    end
+end
+
+local function onCharacterAdded(character)
+    wait(0.1)
+
+    local assetIds = {1365767}
+
+    for _, assetId in ipairs(assetIds) do
+        attach(assetId, character)
+    end
+end
+
+game.Players.LocalPlayer.CharacterAdded:Connect(onCharacterAdded)
+
+if game.Players.LocalPlayer.Character then
+    onCharacterAdded(game.Players.LocalPlayer.Character)
+end
+
+   end,
+})
+
+local Button = HomeTab:CreateButton({
+   Name = "Adurite King of the Night",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   local function l(a, b)
+    local weld = Instance.new("Weld")
+    weld.Part0 = a.Parent
+    weld.Part1 = b.Parent
+    weld.C0 = a.CFrame
+    weld.C1 = b.CFrame
+    weld.Parent = a.Parent
+    return weld
+end
+
+local function createWeld(name, parent, part0, part1, c0, c1)
+    local weld = Instance.new("Weld")
+    weld.Name = name
+    weld.Part0 = part0
+    weld.Part1 = part1
+    weld.C0 = c0
+    weld.C1 = c1
+    weld.Parent = parent
+    return weld
+end
+
+local function findAttachment(parent, name)
+    for _, child in pairs(parent:GetChildren()) do
+        if child:IsA("Attachment") and child.Name == name then
+            return child
+        elseif not (child:IsA("Accessory") or child:IsA("Tool")) then
+            local found = findAttachment(child, name)
+            if found then
+                return found
+            end
+        end
+    end
+end
+
+local function attach(assetId, parent)
+    local asset = game:GetObjects("rbxassetid://" .. tostring(assetId))[1]
+    asset.Parent = parent
+
+    local handle = asset:FindFirstChild("Handle")
+    if handle then
+        local attachment = handle:FindFirstChildOfClass("Attachment")
+        if attachment then
+            local foundAttachment = findAttachment(parent, attachment.Name)
+            if foundAttachment then
+                l(foundAttachment, attachment)
+            end
+        else
+            local head = parent:FindFirstChild("Head")
+            if head then
+                local cframe = CFrame.new(0, 0.5, 0)
+                local attachmentPoint = handle.AttachmentPoint
+                createWeld("CustomWeld", parent, head, head, handle, cframe, attachmentPoint)
+            end
+        end
+    end
+end
+
+local function onCharacterAdded(character)
+    wait(0.1)
+
+    local assetIds = {439946101}
+
+    for _, assetId in ipairs(assetIds) do
+        attach(assetId, character)
+    end
+end
+
+game.Players.LocalPlayer.CharacterAdded:Connect(onCharacterAdded)
+
+if game.Players.LocalPlayer.Character then
+    onCharacterAdded(game.Players.LocalPlayer.Character)
+end
+
+   end,
+})
+
+local Button = HomeTab:CreateButton({
+   Name = "Fiery Horns of the Netherworld",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   local function l(a, b)
+    local weld = Instance.new("Weld")
+    weld.Part0 = a.Parent
+    weld.Part1 = b.Parent
+    weld.C0 = a.CFrame
+    weld.C1 = b.CFrame
+    weld.Parent = a.Parent
+    return weld
+end
+
+local function createWeld(name, parent, part0, part1, c0, c1)
+    local weld = Instance.new("Weld")
+    weld.Name = name
+    weld.Part0 = part0
+    weld.Part1 = part1
+    weld.C0 = c0
+    weld.C1 = c1
+    weld.Parent = parent
+    return weld
+end
+
+local function findAttachment(parent, name)
+    for _, child in pairs(parent:GetChildren()) do
+        if child:IsA("Attachment") and child.Name == name then
+            return child
+        elseif not (child:IsA("Accessory") or child:IsA("Tool")) then
+            local found = findAttachment(child, name)
+            if found then
+                return found
+            end
+        end
+    end
+end
+
+local function attach(assetId, parent)
+    local asset = game:GetObjects("rbxassetid://" .. tostring(assetId))[1]
+    asset.Parent = parent
+
+    local handle = asset:FindFirstChild("Handle")
+    if handle then
+        local attachment = handle:FindFirstChildOfClass("Attachment")
+        if attachment then
+            local foundAttachment = findAttachment(parent, attachment.Name)
+            if foundAttachment then
+                l(foundAttachment, attachment)
+            end
+        else
+            local head = parent:FindFirstChild("Head")
+            if head then
+                local cframe = CFrame.new(0, 0.5, 0)
+                local attachmentPoint = handle.AttachmentPoint
+                createWeld("CustomWeld", parent, head, head, handle, cframe, attachmentPoint)
+            end
+        end
+    end
+end
+
+local function onCharacterAdded(character)
+    wait(0.1)
+
+    local assetIds = {215718515}
+
+    for _, assetId in ipairs(assetIds) do
+        attach(assetId, character)
+    end
+end
+
+game.Players.LocalPlayer.CharacterAdded:Connect(onCharacterAdded)
+
+if game.Players.LocalPlayer.Character then
+    onCharacterAdded(game.Players.LocalPlayer.Character)
+end
+
+   end,
+})
+
 Rayfield:LoadConfiguration()
